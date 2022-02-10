@@ -22,7 +22,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Upload package to S3 bucket
-        run: aws s3 cp deploy_package.zip https://s3.console.aws.amazon.com/s3/buckets/deploy-aws-dev?region=us-east-1
+        run: aws s3 cp deploy_package.zip s3://s3deploy-aws-dev
 
       - name: Create new ElasticBeanstalk Application Version
         run: |
